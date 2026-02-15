@@ -50,3 +50,10 @@
   transform: translateY(0);
   box-shadow: none;
 }
+.title-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}

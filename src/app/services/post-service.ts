@@ -8,9 +8,7 @@ export interface Post {
   title:string
   body: string
 }
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class PostService {
   private api = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -20,7 +18,12 @@ export class PostService {
     return this.http.get<Post[]>(this.api);
   }
 
-  addPost(user: Partial<Post>) {
-    return this.http.post<Post>(this.api, user);
+  addPost(post: Partial<Post>) {
+    return this.http.post<Post>(this.api, post);
+  }
+
+  editPost(id: number, post: Partial<Post>) {
+    // PUT replaces, PATCH updates partially (either is fine)
+    return this.http.patch<Post>(`${this.api}/${id}`, post);
   }
 }

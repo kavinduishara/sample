@@ -1,0 +1,12 @@
+<div class="black-bg" (click)="close()">
+  <div class="white-bg" (click)="$event.stopPropagation()">
+    <div class="title-bar">
+      {{ title() }}
+      <button type="button" class="close-btn" (click)="close()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

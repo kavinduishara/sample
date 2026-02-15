@@ -3,8 +3,8 @@
     <h3 class="title">{{ postData()?.title }}</h3>
 
     <div class="actions">
-      <button type="button" class="btn ghost" (click)="toggleBody()">
-        {{ isExpanded() ? 'Collapse' : 'Expand' }}
+      <button type="button" class="btn ghost" (click)="edit()">
+        Edit
       </button>
 
       <button type="button" class="btn" (click)="toggleComments()">
@@ -19,6 +19,9 @@
 
   @if(!isExpanded() && postData()?.body){
     <button type="button" class="link" (click)="toggleBody()">Read more</button>
+  }
+  @if(isExpanded() && postData()?.body){
+    <button type="button" class="link" (click)="toggleBody()">Read less</button>
   }
 
   <!-- @if(showComments()){
