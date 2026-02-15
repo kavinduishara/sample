@@ -1,0 +1,52 @@
+<div class="post-card">
+  <div class="top">
+    <h3 class="title">{{ postData()?.title }}</h3>
+
+    <div class="actions">
+      <button type="button" class="btn ghost" (click)="toggleBody()">
+        {{ isExpanded() ? 'Collapse' : 'Expand' }}
+      </button>
+
+      <button type="button" class="btn" (click)="toggleComments()">
+        {{ showComments() ? 'Hide comments' : 'Comments' }}
+      </button>
+    </div>
+  </div>
+
+  <p class="body" [class.clamped]="!isExpanded()">
+    {{ postData()?.body }}
+  </p>
+
+  @if(!isExpanded() && postData()?.body){
+    <button type="button" class="link" (click)="toggleBody()">Read more</button>
+  }
+
+  <!-- @if(showComments()){
+    <div class="comments">
+      <div class="comments-header">
+        <span class="comments-title">Comments</span>
+        <span class="comments-count">
+          {{ postData()?.comments?.length ?? 0 }}
+        </span>
+      </div>
+
+      @if((postData()?.comments?.length ?? 0) === 0){
+        <p class="empty">No comments yet.</p>
+      } @else {
+        <ul class="comment-list">
+          @for(c of postData()?.comments; track $index){
+            <li class="comment">
+              <p class="comment-body">{{ c?.body ?? c }}</p>
+              @if(c?.name || c?.email){
+                <p class="comment-meta">
+                  {{ c?.name ?? 'Anonymous' }}
+                  @if(c?.email){ <span class="dot">•</span> {{ c.email }} }
+                </p>
+              }
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  } -->
+</div>

@@ -1,0 +1,65 @@
+:host {
+  display: block;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(180deg, #4f46e5, #7c3aed);
+  color: white;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* Links */
+a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid white;
+    padding-left: 24px;
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 4px solid white;
+  }
+}
+
+/* Logout button at bottom */
+.logout {
+  padding: 0 12px;
+}
+
+.logout button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

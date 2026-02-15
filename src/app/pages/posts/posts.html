@@ -1,0 +1,12 @@
+<div class="posts-page">
+    <div class="title-div">
+         <h1 class="page-title">Posts</h1>
+    <button type="button" class="add-btn">Add</button> 
+    </div>
+
+  <div class="posts-grid">
+    @for (post of posts(); track post.id) {
+      <app-posts-card [postData]="post" />
+    }
+  </div>
+</div>

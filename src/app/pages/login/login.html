@@ -1,0 +1,24 @@
+﻿<form [formGroup]="loginform">
+  <h2>Login</h2>
+  <input type="text" formControlName="username">
+
+  @if(
+    loginform.controls['username'].invalid &&
+    (loginform.controls['username'].touched ||
+     loginform.controls['username'].dirty)
+  ){
+    <span>username required</span>
+  }
+
+  <input type="password" formControlName="password">
+
+  @if(
+    loginform.controls['password'].invalid &&
+    (loginform.controls['password'].touched ||
+     loginform.controls['password'].dirty)
+  ){
+    <span>password required</span>
+  }
+
+  <button type="submit" (click)="submitLogin()" [disabled]="loginform.invalid">submit</button>
+</form>
